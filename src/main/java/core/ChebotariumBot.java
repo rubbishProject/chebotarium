@@ -11,7 +11,7 @@ public class ChebotariumBot extends TelegramLongPollingBot {
         if(update.hasMessage() && update.getMessage().hasText()) {
             SendMessage message = new SendMessage()
                     .setChatId(update.getMessage().getChatId())
-                    .setText(update.getMessage().getText());
+                    .setText(update.getMessage().getText() + "1");
 
             try {
                 execute(message);
