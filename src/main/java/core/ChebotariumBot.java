@@ -8,6 +8,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 @Component
 public class ChebotariumBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
+        System.out.println(update);
         if(update.hasMessage() && update.getMessage().hasText()) {
             SendMessage message = new SendMessage()
                     .setChatId(update.getMessage().getChatId())
