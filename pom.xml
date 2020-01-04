@@ -48,7 +48,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>com.somebots.Application</mainClass>
+                            <mainClass>core.Application</mainClass>
                             <name>workerBot</name>
                         </program>
                     </programs>
