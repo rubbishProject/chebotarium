@@ -10,12 +10,12 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class Application {
     public static void main(String[] args) {
         ApiContextInitializer.init();
-        TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
-        try {
-            telegramBotsApi.registerBot(new ChebotariumBot());
-        } catch (TelegramApiException ex) {
-            ex.printStackTrace();
-        }
+//        TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
+//        try {
+//            telegramBotsApi.registerBot(new ChebotariumBot());
+//        } catch (TelegramApiException ex) {
+//            ex.printStackTrace();
+//        }
         SpringApplication.run(Application.class, args);
     }
 }
