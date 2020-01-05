@@ -1,12 +1,13 @@
-package core;
+package handlers;
 
+import configuration.BotConfig;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 @Component
-public class ChebotariumBot extends TelegramLongPollingBot {
+public class ChebotariumHandler extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         System.out.println(update);
         if(update.hasMessage() && update.getMessage().hasText()) {
@@ -23,10 +24,10 @@ public class ChebotariumBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "ChebotariumBot";
+        return BotConfig.CHEBOTARIUM_USER;
     }
 
     public String getBotToken() {
-        return "1021570162:AAH1Bb3SxCWpHaVPYnGarrKFAjogpjEmpFk";
+        return BotConfig.CHEBOTARIUM_TOKEN;
     }
 }
