@@ -1,4 +1,4 @@
-package handlers;
+package core.handlers;
 
 import configuration.BotConfig;
 import org.springframework.stereotype.Component;
