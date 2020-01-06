@@ -54,21 +54,28 @@ public class ChebotariumHandler extends TelegramLongPollingBot {
                 + update.getMessage().getChat().getUserName() + "!\n"
                 + "Выбери команду из списка!");
 
-                KeyboardButton keyboardButton = new KeyboardButton();
-                keyboardButton.setText("кнопка");
+                KeyboardButton keyboardButton1 = new KeyboardButton();
+                keyboardButton1.setText("/menu");
+                KeyboardButton keyboardButton2 = new KeyboardButton();
+                keyboardButton2.setText("кнопка справа просто так");
 
-                KeyboardRow keyboardRow = new KeyboardRow();
-                keyboardRow.add("Меню");
-                keyboardRow.add(keyboardButton);
+                KeyboardRow keyboardRow1 = new KeyboardRow();
+                keyboardRow1.add(keyboardButton2);
 
-                keyboardRows.add(keyboardRow);
+                KeyboardRow keyboardRow2 = new KeyboardRow();
+                keyboardRow2.add(new KeyboardButton().setText("/basket"));
 
+                keyboardRows.add(keyboardRow1);
+                keyboardRows.add(keyboardRow2);
                 break;
             case 0:
+                message.setText("СТАРТ");
                 break;
             case 1:
+                message.setText("ВЫ ВЫБРАЛИ МЕНЮ");
                 break;
             case 2:
+                message.setText("ВЫ ВЫБРАЛИ КОРЗИНУ");
                 break;
         }
 
