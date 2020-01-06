@@ -6,19 +6,22 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import static services.enums.Emoji.CRYING_FACE;
+
 @Component
 public class ChebotariumHandler extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         System.out.println(update);
         if(update.hasMessage() && update.getMessage().hasText()) {
-            SendMessage message = new SendMessage()
-                    .setChatId(update.getMessage().getChatId())
-                    .setText(getAnswer(update));
-
-            try {
-                execute(message);
-            } catch (Exception ex) {
-                ex.printStackTrace();
+            if(sendAnswer(update)) {
+                try {
+                    SendMessage message = new SendMessage()
+                            .setChatId(update.getMessage().getChatId())
+                            .setText("Я испытываю некоторый трудности с ответом " + CRYING_FACE
+                                    + "\nпопробуйте чуть позже..");
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
         }
     }
@@ -31,10 +34,21 @@ public class ChebotariumHandler extends TelegramLongPollingBot {
         return BotConfig.CHEBOTARIUM_TOKEN;
     }
 
-    public String getAnswer(Update update){
-        return "Привет " + update.getMessage().getChat().getUserName() + "\n тебя зовут: "
-                + update.getMessage().getChat().getFirstName() + " "
-                + update.getMessage().getChat().getLastName();
+    public boolean sendAnswer(Update update){
+        SendMessage message = new SendMessage()
+                .setChatId(update.getMessage().getChatId())
+                .setText(
+                        "Привет " + update.getMessage().getChat().getUserName() + "\n тебя зовут: "
+                                + update.getMessage().getChat().getFirstName() + " "
+                                + update.getMessage().getChat().getLastName()
+                );
+        try {
+            execute(message);
+            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
     };
 
 }
