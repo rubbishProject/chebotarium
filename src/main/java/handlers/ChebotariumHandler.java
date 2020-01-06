@@ -13,7 +13,7 @@ public class ChebotariumHandler extends TelegramLongPollingBot {
         if(update.hasMessage() && update.getMessage().hasText()) {
             SendMessage message = new SendMessage()
                     .setChatId(update.getMessage().getChatId())
-                    .setText(update.getMessage().getText() + "1");
+                    .setText(getAnswer(update));
 
             try {
                 execute(message);
@@ -30,4 +30,11 @@ public class ChebotariumHandler extends TelegramLongPollingBot {
     public String getBotToken() {
         return BotConfig.CHEBOTARIUM_TOKEN;
     }
+
+    public String getAnswer(Update update){
+        return "Привет " + update.getMessage().getChat().getUserName() + "\n тебя зовут: "
+                + update.getMessage().getChat().getFirstName() + " "
+                + update.getMessage().getChat().getLastName();
+    };
+
 }
