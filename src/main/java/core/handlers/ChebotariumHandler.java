@@ -14,11 +14,12 @@ public class ChebotariumHandler extends TelegramLongPollingBot {
         System.out.println(update);
         if(update.hasMessage() && update.getMessage().hasText()) {
             if(sendAnswer(update)) {
+                SendMessage message = new SendMessage()
+                        .setChatId(update.getMessage().getChatId())
+                        .setText("Я испытываю некоторый трудности с ответом " + CRYING_FACE
+                                + "\nпопробуйте чуть позже..");
                 try {
-                    SendMessage message = new SendMessage()
-                            .setChatId(update.getMessage().getChatId())
-                            .setText("Я испытываю некоторый трудности с ответом " + CRYING_FACE
-                                    + "\nпопробуйте чуть позже..");
+                    execute(message);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
