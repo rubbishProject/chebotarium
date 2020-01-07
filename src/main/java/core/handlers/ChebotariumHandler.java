@@ -60,6 +60,7 @@ public class ChebotariumHandler extends TelegramLongPollingBot {
                 keyboardButton2.setText("кнопка справа просто так");
 
                 KeyboardRow keyboardRow1 = new KeyboardRow();
+                keyboardRow1.add(keyboardButton1);
                 keyboardRow1.add(keyboardButton2);
 
                 KeyboardRow keyboardRow2 = new KeyboardRow();
