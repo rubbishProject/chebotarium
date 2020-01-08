@@ -1,6 +1,6 @@
 package core.handlers;
 
-import configuration.BotConfig;
+import core.configuration.BotConfig;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;

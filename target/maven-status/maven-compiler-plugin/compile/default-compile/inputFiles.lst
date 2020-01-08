@@ -1,5 +1,6 @@
-/Users/andreybrsv/Desktop/chebotarium/src/main/java/handlers/ChebotariumHandler.java
+/Users/andreybrsv/Desktop/chebotarium/src/main/java/core/handlers/ChebotariumHandler.java
 /Users/andreybrsv/Desktop/chebotarium/src/main/java/configuration/BotConfig.java
 /Users/andreybrsv/Desktop/chebotarium/src/main/java/core/Application.java
 /Users/andreybrsv/Desktop/chebotarium/src/main/java/services/SimpleTestService.java
+/Users/andreybrsv/Desktop/chebotarium/src/main/java/services/enums/Commands.java
 /Users/andreybrsv/Desktop/chebotarium/src/main/java/services/enums/Emoji.java

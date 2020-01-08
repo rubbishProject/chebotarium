@@ -1,4 +1,4 @@
-package configuration;
+package core.configuration;
 
 public class BotConfig {
     public static final String CHEBOTARIUM_TOKEN = "1021570162:AAH1Bb3SxCWpHaVPYnGarrKFAjogpjEmpFk";
