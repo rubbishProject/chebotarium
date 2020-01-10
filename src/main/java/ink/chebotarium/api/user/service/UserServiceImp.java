@@ -25,4 +25,8 @@ public class UserServiceImp {
     Mono<User> findById(final long id){
         return userRepository.findById(id);
     }
+
+    Mono<User> findByUsername(final String username){
+        return userRepository.findByUsername(username);
+    }
 }
